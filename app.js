@@ -6,6 +6,7 @@
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
     mobileMenu.classList.toggle('open');
+    document.body.classList.toggle('no-scroll')
   });
   document.querySelectorAll('.mobile-link').forEach(l =>
     l.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); })
