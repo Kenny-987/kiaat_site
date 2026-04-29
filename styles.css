@@ -183,7 +183,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
     }
     .mobile-menu.open { transform: translateY(0); }
     .mobile-menu a { font-size: 0.95rem; font-weight: 500; color: var(--muted); transition: color 0.2s; }
-    .mobile-menu a:hover { color: var(--navy); }
+    .mobile-menu a:hover { color: var(--text); }
 
 
 
@@ -281,7 +281,8 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 
 
     /* SHARED */
-    .container { max-width: 1180px; 
+    .container {
+       max-width: 1180px; 
       margin: 0 auto;
        padding: 0 clamp(1.5rem,5vw,4rem); 
         /* border: 1px solid red; */
@@ -292,7 +293,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
       font-family: var(--font-head);
        font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 700; 
-      color: var(--navy); 
+      color: var(--text); 
       line-height: 1.2; 
       letter-spacing: -0.02em; 
       margin-bottom: 1rem;
@@ -313,7 +314,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
       font-family: var(--font-body); 
       font-weight: 600; 
       font-size: 0.95rem;
-      background: var(--navy); 
+      background: var(--text); 
       color: var(--muted); 
       padding: 0.85rem 2rem; 
       border-radius: 50px; 
@@ -370,7 +371,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
     }
     h1.hero-title {
       font-family: var(--font-head); font-size: clamp(2.6rem, 5.5vw, 4rem);
-      font-weight: 700; color: var(--navy); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.4rem;
+      font-weight: 700; color: var(--text); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.4rem;
       opacity: 0; animation: fadeUp 0.55s 0.3s forwards;
     }
     h1.hero-title em { 
@@ -417,6 +418,15 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
       padding: 6rem 0;
     }
 
+    .pill-label{
+      background: var(--crimson);
+      border: 1px solid red;
+      color: white;
+      width: fit-content;
+      padding: 6px;
+      border-radius: var(--radius-lg);
+    }
+    
     .services-header {
        display: flex; 
        justify-content: space-between; 
@@ -570,7 +580,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
     .cta-inner h2 { 
       font-family: var(--font-head); 
       font-size: clamp(1.6rem, 3.5vw, 2.5rem); 
-      font-weight: 700; color: var(--navy); 
+      font-weight: 700; color: var(--text); 
       letter-spacing: -0.02em; 
       max-width: 500px; line-height: 1.25; 
       text-align: center;
@@ -637,10 +647,14 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
        margin-bottom: 0.15rem; 
       }
 
-    .ci-value { font-size: 0.88rem; 
-      color: var(--navy);
+    .ci-value { 
+      font-size: 0.88rem; 
+      color: var(--text);
        font-weight: 500; 
-
+      }
+      .ci-value a{
+        color: var(--text);
+        text-decoration: underline;
       }
     .contact-form-wrap { background: var(--white);
        border: 1px solid var(--border); 
@@ -649,23 +663,91 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
         box-shadow: var(--shadow-sm); 
       }
 
-    .form-title { font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
-    .form-subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 2rem; }
-    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-    .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--text); }
+    .form-title { font-family: var(--font-head);
+       font-size: 1.4rem; 
+       font-weight: 700; 
+       color: var(--text); 
+       margin-bottom: 0.4rem; 
+      }
+
+    .form-subtitle { 
+      font-size: 0.85rem;
+       color: var(--muted);
+        margin-bottom: 2rem;
+       }
+
+    .contact-form { 
+      display: flex;
+       flex-direction: column;
+        gap: 1.2rem; 
+      }
+
+    .form-row {
+       display: grid; 
+       grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+       }
+
+    .form-group { 
+      display: flex;
+       flex-direction: column; 
+       gap: 0.4rem; 
+      }
+
+    .form-group label { 
+      font-size: 0.8rem;
+       font-weight: 600; 
+       color: var(--text); 
+      }
+
     .form-group input, .form-group textarea, .form-group select {
-      font-family: var(--font-body); font-size: 0.9rem; background: rgb(250, 250, 250);
-      border: 1.5px solid var(--border); border-radius: 10px; color: var(--text);
-      padding: 0.75rem 1rem; outline: none; width: 100%;
-      transition: border-color 0.2s, box-shadow 0.2s; -webkit-appearance: none;
+      font-family: var(--font-body); 
+      font-size: 0.9rem; 
+      background: rgb(250, 250, 250);
+      border: 1.5px solid var(--border); 
+      border-radius: 10px; 
+      color: var(--text);
+      padding: 0.75rem 1rem; 
+      outline: none;
+       width: 100%;
+      transition: border-color 0.2s, box-shadow 0.2s;
+       -webkit-appearance: none;
     }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(26,46,74,0.08); background: var(--white); }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: #b0bac7; }
-    .form-submit { font-family: var(--font-body); font-weight: 600; font-size: 1rem; background: var(--navy); color: #fff; border: none; padding: 1rem 2rem; border-radius: 50px; cursor: pointer; width: 100%; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
-    .form-submit:hover { background: var(--navy-soft); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { 
+      border-color: var(--text); 
+      box-shadow: 0 0 0 3px rgba(26,46,74,0.08);
+       background: var(--white); 
+      }
+    .form-group textarea { 
+      resize: vertical;
+       min-height: 120px; 
+      }
+
+    .form-group input::placeholder, .form-group textarea::placeholder {
+       color: #b0bac7;
+       }
+    .form-submit {
+      font-family: var(--font-body);
+       font-weight: 600; 
+       font-size: 1rem; 
+       background: var(--crimson);
+        color: #fff; 
+        border: none; 
+        padding: 1rem 2rem; 
+        border-radius: 50px; 
+        cursor: pointer;
+         width: 100%; 
+         transition: background 0.2s, transform 0.2s, box-shadow 0.2s; 
+        }
+
+    .form-submit:hover {
+       background: rgb(252, 141, 163);
+        transform: translateY(-1px);
+         box-shadow: var(--shadow-md); 
+
+        }
+
     .form-note { font-size: 0.77rem; color: var(--muted); text-align: center; }
     .form-success { display: none; padding: 1rem; border-radius: 10px; border: 1.5px solid #a7f3d0; background: #ecfdf5; color: #065f46; font-size: 0.88rem; text-align: center; font-weight: 500; }
 
@@ -691,6 +773,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     @media (max-width: 960px) {
+      
       .hero-inner { grid-template-columns: 1fr; padding: 3.5rem 0 3rem; }
       .hero-visual { max-width: 480px; }
       .hero-card-float { left: 0; }
@@ -707,7 +790,20 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
       .trust-inner { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .services-header { flex-direction: column; align-items: flex-start; }
-       .hero-visual img{
+
+      #cta{
+        background: white;
+      }
+      #cta .cta-actions{
+        display: none;
+      }
+       .hero-visual{
       display: none;
     }
+        .pill-label{
+      margin-bottom: 10px;
     }
+#process .section-title {
+  text-align: left;
+    }
+  }
