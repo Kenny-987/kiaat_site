@@ -6,21 +6,15 @@ class SiteContact extends HTMLElement {
         <link rel="stylesheet" href="/styles.css">
 
       <section id="contact">
-        <div class="container">
+        <div class="container contacts">
           <div class="contact-grid">
-            <div class="">
+            
               <div class="pill-label sage"><div class="dot"></div>Get In Touch</div>
               <h2 class="section-title">Let's Have a<br/>Conversation</h2>
               <p class="section-sub">No pressure, no jargon. Just a friendly chat about how we can help your business run better.</p>
               <div class="contact-details">
 
-                <div class="contact-item">
-                  <div class="ci-icon"><i data-lucide="map-pin" style="width: 20px; height: 20px;"></i></div>
-                  <div>
-                    <div class="ci-label">Location</div>
-                    <div class="ci-value">18 Sebakwe, Richmond, Zimbabwe</div>
-                  </div>
-                </div>
+               
 
                 <div class="contact-item">
                   <div class="ci-icon"><i data-lucide="mail" style="width: 20px; height: 20px;"></i></div>
@@ -46,53 +40,8 @@ class SiteContact extends HTMLElement {
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="">
-              <div class="contact-form-wrap">
-                <div class="form-title">Send Us a Message</div>
-                <div class="form-subtitle">We'll get back to you within 12hrs, usually sooner</div>
-                <form class="contact-form" id="contactForm" novalidate>
-                  <div class="form-row">
-                    <div class="form-group">
-                      <label for="fname">First Name</label>
-                      <input type="text" id="fname" placeholder="Ada" required />
-                    </div>
-                    <div class="form-group">
-                      <label for="lname">Last Name</label>
-                      <input type="text" id="lname" placeholder="Lovelace" required />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="ada@yourcompany.com" required />
-                  </div>
-                  <div class="form-group">
-                    <label for="phone">Phone Number (optional)</label>
-                    <input type="tel" id="phone" placeholder="+263 77 123 4567" />
-                  </div>
-                  <div class="form-group">
-                    <label for="service">What can we help with?</label>
-                    <select id="service">
-                      <option value="">Please select...</option>
-                      <option>VPS Server Setup</option>
-                      <option>Data Migration</option>
-                      <option>Self & Hosting</option>
-                      <option>Software Development</option>
-                      <option>Automating Deployment</option>
-                      <option>General Consultation</option>
-                      <option>Not sure yet</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="message">Tell us about your business</label>
-                    <textarea id="message" placeholder="Briefly describe your situation or what you're hoping to achieve..."></textarea>
-                  </div>
-                  <button type="submit" class="form-submit">Send Message →</button>
-                  <p class="form-note"><i data-lucide="lock" style="width: 10px; height: 10px;"></i> Your information is kept private and never shared with third parties.</p>
-                  <div class="form-success" id="formSuccess">Message received! We'll be in touch within one business day.</div>
-                </form>
-              </div>
-            </div>
+            
+
           </div>
         </div>
       </section>
