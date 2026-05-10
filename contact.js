@@ -11,7 +11,7 @@ class SiteContact extends HTMLElement {
             
               <div class="pill-label sage"><div class="dot"></div>Get In Touch</div>
               <h2 class="section-title">Let's Have a<br/>Conversation</h2>
-              <p class="section-sub">No pressure, no jargon. Just a friendly chat about how we can help your business run better.</p>
+              <p class="section-sub">Free Consultation with no strings attached.</p>
               <div class="contact-details">
 
                

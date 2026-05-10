@@ -651,6 +651,39 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
+
+
+
+
+    /* ----------------------------About us page----------------------------------------
+    --------------------------------------------------------------------------------------
+    ------------------------------------------------------------------------------------- */
+
+    .about-us{
+    max-width: 1180px; 
+    margin:  auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    /* border: 1px solid red; */
+    padding: 0 clamp(1.5rem,5vw,4rem); 
+    }
+
+  .about-us h1{
+    text-align: center;
+    color: var(--crimson);
+  }
+  .about-us h3{
+    color: var(--crimson);
+  }
+  .about-section{
+    background-color: #fff;
+    padding: 16px 20px;
+    border-radius: var(--radius-lg);
+    margin-bottom: 30px;
+  }
+  .about-section li{
+    list-style-type: disc;font-weight: 600;
+  }
     @media (max-width: 960px) {
       
       .hero-inner { grid-template-columns: 1fr; padding: 3.5rem 0 3rem; }
