@@ -19,7 +19,7 @@ class SiteFooter extends HTMLElement {
             <div class="footer-col">
               <h4>Services</h4>
               <ul>
-                <li><a href="./services/serversetup.html">VPS Server Setup</a></li>
+                <li><a href="/services/serversetup.html">VPS Server Setup</a></li>
                 <li><a href="/services/databackup.html">Data migration</a></li>
                 <li><a href="/services/selfhosting.html">Self Hosting</a></li>
               </ul>
