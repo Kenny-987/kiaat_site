@@ -35,7 +35,7 @@ class SiteFooter extends HTMLElement {
             <div class="footer-col">
               <h4>Connect</h4>
               <ul>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/company/kiaat-technologies">LinkedIn</a></li>
                 <li><a href="#">Facebook</a></li>
                 <li><a href="#">Twitter / X</a></li>
                 <li><a href="#contact">Contact Us</a></li>
