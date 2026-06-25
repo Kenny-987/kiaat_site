@@ -12,17 +12,20 @@ class SiteFooter extends HTMLElement {
           <div class="footer-grid">
             <div class="footer-brand">
               <div class="nav-logo">
-                Kiaat Technologies
+                Kiaat Labs
               </div>
               <p>Simplifying Technology, Amplifying Productivity</p>
             </div>
             <div class="footer-col">
               <h4>Services</h4>
-              <ul>
-                <li><a href="/services/serversetup.html">VPS Server Setup</a></li>
-                <li><a href="/services/databackup.html">Data migration</a></li>
-                <li><a href="/services/selfhosting.html">Self Hosting</a></li>
-              </ul>
+
+            <ul >
+    <li><a href="/services/digital-presence.html">Digital Presence & Growth</a></li>
+    <li><a href="/services/business-systems.html">Business Systems & Automation</a></li>
+    <li><a href="/services/managed-it.html">Managed IT & Support</a></li>
+    <li><a href="/services/networking.html">Network & On-Site Technology</a></li>
+    <li><a href="/services/infrastructure.html">Infrastructure & Hosting</a></li>
+</ul>
             </div>
             <div class="footer-col">
               <h4>Company</h4>
@@ -35,15 +38,15 @@ class SiteFooter extends HTMLElement {
             <div class="footer-col">
               <h4>Connect</h4>
               <ul>
-                <li><a href="https://www.linkedin.com/company/kiaat-technologies">LinkedIn</a></li>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter / X</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="https://www.linkedin.com/company/kiaat-labs">LinkedIn</a></li>
+                <li><a href="https://www.facebook.com/kiaatlabs/">Facebook</a></li>
+                <li><a href="https://wa.me/263718359679">WhatsApp</a></li>
+                <li><a href="tel:0789644097">Contact Us</a></li>
               </ul>
             </div>
           </div>
           <div class="footer-bottom">
-            <span>© KIAAT Technologies</span>
+            <span>© KIAAT</span>
             <div>
               
             </div>

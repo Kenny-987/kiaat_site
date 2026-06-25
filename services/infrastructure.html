@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiaat Labs - Infrastructure & Hosting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;0,900;1,300;1,700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="services.css">
+  <script src="../contact.js" defer></script>
+  <script src="../footer.js" defer></script>
+</head>
+<body>
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <div class="logo-img">
+      <img src="/images/kiaatlogo.png" alt="">
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropbtn">
+        Services
+        <span class="dropdown-icon">▼</span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="./digital-presence.html" class="dropdown-item">Digital Presence & Growth</a></li>
+        <li><a href="./business-systems.html" class="dropdown-item">Business Systems & Automation</a></li>
+        <li><a href="./managed-it.html" class="dropdown-item">Managed IT & Support</a></li>
+        <li><a href="./network-onsite.html" class="dropdown-item">Network & On-Site Technology</a></li>
+        <li><a href="#" class="dropdown-item">Infrastructure & Hosting</a></li>
+      </ul>
+    </li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../index.html#process">Our Process</a></li>
+  </ul>
+  <a href="#contact" class="btn-nav">Talk to Us</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="nav-link">Home</a>
+  <li class="nav-item dropdown">
+    <a href="#" class="nav-link dropbtn">
+      Services
+      <span class="dropdown-icon">▼</span>
+    </a>
+    <ul class="dropdown-menu" style="z-index: 100;">
+      <li><a href="./digital-presence.html" class="dropdown-item">Digital Presence & Growth</a></li>
+      <li><a href="./business-systems.html" class="dropdown-item">Business Systems & Automation</a></li>
+      <li><a href="./managed-it.html" class="dropdown-item">Managed IT & Support</a></li>
+      <li><a href="./network-onsite.html" class="dropdown-item">Network & On-Site Technology</a></li>
+      <li><a href="#" class="dropdown-item">Infrastructure & Hosting</a></li>
+    </ul>
+  </li>
+  <a href="../about.html" class="mobile-link">About</a>
+  <a href="../index.html#process" class="mobile-link">Our Process</a>
+  <a href="#contact" class="btn-outline" style="text-align: center;">Talk to Us</a>
+</div>
+
+
+<section class="service-container">
+<div class="service-heading">
+  <h1>Infrastructure & Hosting</h1>
+</div>
+
+  <div class="service-desc">
+    <h1>The Backbone Behind Everything Online.</h1>
+    <p>Your website, your email, your data and your apps all need somewhere reliable to live. We build and manage the hosting and infrastructure that keeps everything running — fast, secure and available when you need it. From servers and cloud environments to backups and domains, we handle the behind-the-scenes work so your business never has to think about it.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="why-service">
+    <h1>Why does your infrastructure matter?</h1>
+    <p>Slow load times, downtime, lost data and expired domains don't just cause inconvenience — they cost you customers and credibility. A properly managed infrastructure means your business stays online, your data stays safe, and you never have to scramble when something goes wrong.</p>
+  </div>
+
+  <div class="benefits">
+
+    <div class="benefit">
+      <span class="benefit-icon"></span>
+      <p class="benefit-text"><strong>Web & Application Hosting</strong><span>Fast, secure hosting for your website and business applications, sized to your traffic and workload.</span></p>
+    </div>
+
+    <div class="benefit">
+      <span class="benefit-icon"></span>
+      <p class="benefit-text"><strong>Cloud Infrastructure Setup</strong><span>Scalable cloud environments configured to grow with your business, without the over-spend.</span></p>
+    </div>
+
+    <div class="benefit">
+      <span class="benefit-icon"></span>
+      <p class="benefit-text"><strong>Domain & Email Management</strong><span>Domains, DNS and business email set up correctly and kept running without interruption.</span></p>
+    </div>
+
+    <div class="benefit">
+      <span class="benefit-icon"></span>
+      <p class="benefit-text"><strong>Backups & Disaster Recovery</strong><span>Automated backups and a clear recovery plan, so a worst-case scenario never becomes a permanent loss.</span></p>
+    </div>
+
+    <div class="benefit">
+      <span class="benefit-icon"></span>
+      <p class="benefit-text"><strong>Uptime & Performance Monitoring</strong><span>Continuous monitoring to catch issues before they turn into downtime.</span></p>
+    </div>
+
+    <div class="benefit">
+      <span class="benefit-icon"></span>
+      <p class="benefit-text"><strong>Server Management</strong><span>Setup, maintenance and security updates handled for you, so your servers stay stable and protected.</span></p>
+    </div>
+
+  </div>
+</section>
+
+<section id="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>Ready to build infrastructure your <em>business can depend on?</em></h2>
+      <div class="cta-actions">
+        <a href="#contact" class="btn-primary">Book a Free Consultation <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<site-contact id="contact"></site-contact>
+<site-footer></site-footer>
+
+<script src="../app.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

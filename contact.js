@@ -36,9 +36,18 @@ class SiteContact extends HTMLElement {
                   <div class="ci-icon"><i data-lucide="clock" style="width: 20px; height: 20px;"></i></div>
                   <div>
                     <div class="ci-label">Business Hours</div>
-                    <div class="ci-value">Mon – Fri, 08:00 – 18:00 CAT · 24/7 for managed clients</div>
+                    <div class="ci-value">Mon – Fri, 08:00 – 17:00 CAT</div>
                   </div>
-                </div>
+                  </div>
+                
+                  <div class="contact-item">
+                  <div class="ci-icon"><i data-lucide="clock" style="width: 20px; height: 20px;"></i></div>
+                  <div>
+                    <div class="ci-label">Location</div>
+                    <div class="ci-value">18 Sebakwe Avenue, Richmond, Bulawayo</div>
+                  </div>
+                  </div>
+
               </div>
             
 
