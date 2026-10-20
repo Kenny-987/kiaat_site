@@ -1,4 +1,3 @@
-
 (() => {
 'use strict';
 const $ = (s, r = document) => r.querySelector(s);
@@ -167,7 +166,7 @@ function tickMarquee() {
 /* ---------- Project data ----------
    cover: optional image for each project (a data: URI, or a path if you host the file).
    Leave it empty to use the generated artwork. */
-   
+
 const PROJECTS = [
   { title: 'Moonbeam', client: 'Moonbeam Bulawayo', year: '2026', kind: 'Website, Enquiries Intake', services: 'Web Design & Development', timeline: '1-2 weeks', need: 'creative website', cover: './images/moonbeam.png', url: 'https://moonbeam.co.zw',
     brief: 'Client needed a way to keep people updated on activities and events, and away to recieve enquiries.',
@@ -347,10 +346,14 @@ function layoutD(d, mode) {
   d.mode = mode;
   const n = d.n;
   const g = mode === 'wide' ? { W: 700, cx: 190, lx: 380, sp: d.sp.wide || 80 } : { W: 600, cx: 140, lx: 310, sp: d.sp.narrow || 170 };
-  g.H = 230 + (n - 1) * g.sp; g.y0 = g.H - 190;
   d.geo = g;
-  d.svg.setAttribute('viewBox', `0 0 ${g.W} ${g.H}`);
-  d.stage.style.aspectRatio = `${g.W} / ${g.H}`;
+  /* Canvas height is dynamic (recomputed every frame in renderD from the current
+     expansion amount), so it only reserves as much vertical space as the plates
+     currently need instead of always reserving room for full expansion. This
+     initial viewBox is just a sane starting point before the first render. */
+  const H0 = 230 + (n - 1) * T;
+  d.svg.setAttribute('viewBox', `0 0 ${g.W} ${H0}`);
+  d.stage.style.aspectRatio = `${g.W} / ${H0}`;
   d.labEls.forEach(l => { l.style.left = (g.lx / g.W * 100) + '%'; l.style.width = ((g.W - g.lx) / g.W * 100) + '%'; });
   const x1 = g.cx + HW + 7, x2 = g.lx - 8;
   d.len = x2 - x1;
@@ -362,16 +365,24 @@ function layoutD(d, mode) {
 function renderD(d) {
   const g = d.geo, n = d.n, t = d.cur;
   const sp = T + t * (g.sp - T);
-  const top = g.H - 190 - (n - 1) * g.sp; /* y of the top plate when fully spread (upward mode) */
+  /* Dynamic canvas height: only as tall as the current spread needs, growing
+     smoothly toward the full-expansion height as t goes to 1. This keeps the
+     collapsed state compact instead of leaving empty space reserved for the
+     fully-expanded layout. */
+  const H = 230 + (n - 1) * sp;
+  const y0 = H - 190; /* bottom-plate anchor (upward mode) */
+  const top = 40; /* top-plate anchor (downward mode) — constant once height is dynamic */
+  d.svg.setAttribute('viewBox', `0 0 ${g.W} ${H}`);
+  d.stage.style.aspectRatio = `${g.W} / ${H}`;
   let count = 0;
   for (let k = 0; k < n; k++) {
     /* upward: bottom plate fixed, others lift off. downward: top plate fixed, others drop away. */
-    const yt = d.down ? top + k * sp : g.y0 - (n - 1 - k) * sp, yc = yt + PIV;
+    const yt = d.down ? top + k * sp : y0 - (n - 1 - k) * sp, yc = yt + PIV;
     d.plates[k].setAttribute('transform', `translate(${g.cx} ${yt})`);
     const r = clamp((t - (0.08 + k * 0.72 / n)) / 0.2, 0, 1);
     if (r >= 0.5) count++;
     const lab = d.labEls[k];
-    lab.style.top = (yc / g.H * 100) + '%';
+    lab.style.top = (yc / H * 100) + '%';
     lab.style.opacity = r;
     lab.style.transform = `translate(${(r - 1) * 14}px,-50%)`;
     const off = r <= 0.6;
@@ -384,8 +395,8 @@ function renderD(d) {
     d.axis.setAttribute('y1', top + S / 2 - 18);
     d.axis.setAttribute('y2', top + (n - 1) * sp + S / 2);
   } else {
-    d.axis.setAttribute('y1', g.y0 - (n - 1) * sp + S / 2 - 18);
-    d.axis.setAttribute('y2', g.y0 + S / 2);
+    d.axis.setAttribute('y1', y0 - (n - 1) * sp + S / 2 - 18);
+    d.axis.setAttribute('y2', y0 + S / 2);
   }
   d.axis.style.opacity = t * 0.7;
   if (count !== d.shown) {
@@ -406,7 +417,7 @@ function tickDecomps() {
 
 /* ---------- Process steps ---------- */
 const STEPS = [
-  { title: 'Discovery', summary: 'We learn how your business works and agree what success looks like.', out: 'A one-page brief with goals, scope, risks and a plan.',
+  { title: 'Discovery', summary: 'We learn how your business works and agree what success looks like.', out: 'A brief with goals, scope, risks and a plan.',
     layers: [
       { t: 'Stakeholder interviews', d: 'We talk to your team to learn how the business really works.', p: 'chat' },
       { t: 'User research', d: 'Short sessions with the people who will use the product.', p: 'circles' },

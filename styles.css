@@ -1,4 +1,3 @@
-
 :root{
   color-scheme:light;
   --bg:#fff;
@@ -64,8 +63,9 @@ ul{padding:0;list-style:none}
     min-height:100svh;
     display:flex;
     flex-direction:column;
+    justify-content:space-between;
     padding:112px var(--pad) 32px;
-   
+
 }
 
 .hero h1{
@@ -273,8 +273,23 @@ ul{padding:0;list-style:none}
   .menu-btn{display:block}
   .panel-in{grid-template-columns:1fr}
   .panel-in p,.tags{grid-column:1}
-  .hero{padding-top:100px}
+
+  /* Hero: stop forcing a full viewport block when the content doesn't need it.
+     Content now sizes naturally instead of leaving a dead gap before the next section. */
+  .hero{min-height:auto;padding:100px var(--pad) 40px;justify-content:flex-start;gap:28px}
+  .hero-foot{padding-top:0}
+
   .hero-foot{flex-direction:column;align-items:flex-start}
+
+  /* Tighten section rhythm so stacked content on mobile doesn't leave large
+     empty bands between sections (statement, services, work, process). */
+  .statement{padding:48px var(--pad)}
+  .section{padding-top:48px;padding-bottom:48px}
+  .sec-head{margin-bottom:28px}
+  .decomp{padding:20px 0}
+  .d-ctl{margin-top:20px}
+  .d-out{margin-top:18px}
+
   .row{grid-template-columns:1fr auto}
   .r-title{grid-column:1/-1}
   .r-year{grid-column:2;grid-row:2}
@@ -301,6 +316,13 @@ ul{padding:0;list-style:none}
   .lab b{font-size:.95rem}
   .lab .ld{font-size:.8rem}
   .ach b{font-size:.9rem}
+
+  /* Smallest phones: trim further so the hero and inter-section gaps
+     stay proportional to the shorter viewport height. */
+  .hero{padding:88px var(--pad) 32px;gap:20px}
+  .statement{padding:36px var(--pad)}
+  .section{padding-top:36px;padding-bottom:36px}
+  .sec-head{margin-bottom:20px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
