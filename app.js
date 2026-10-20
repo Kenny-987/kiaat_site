@@ -417,7 +417,7 @@ function tickDecomps() {
 
 /* ---------- Process steps ---------- */
 const STEPS = [
-  { title: 'Discovery', summary: 'We learn how your business works and agree what success looks like.', out: 'A brief with goals, scope, risks and a plan.',
+  { title: 'Discovery', summary: 'We learn how your business works and agree what success looks like.', out: 'A one-page brief with goals, scope, risks and a plan.',
     layers: [
       { t: 'Stakeholder interviews', d: 'We talk to your team to learn how the business really works.', p: 'chat' },
       { t: 'User research', d: 'Short sessions with the people who will use the product.', p: 'circles' },
@@ -561,11 +561,12 @@ const ACCESS_KEY = '0c05b545-2e62-4372-8215-30d004b848e8';
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
-  const name = $('#name').value.trim(), email = $('#email').value.trim();
+  const name = $('#name').value.trim(), email = $('#email').value.trim(), phone = $('#phone').value.trim();
   const n = needs.filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.dataset.need);
   const w = (whens.find(c => c.getAttribute('aria-pressed') === 'true') || {}).dataset;
   if (!n.length) return say('Pick at least one thing you need help with.', true, needs[0]);
-  if (!/^\S+@\S+\.\S+$/.test(email)) return say('Add an email address so we can reply.', true, $('#email'));
+  if (!email && !phone) return say('Add an email or a phone number so we can reply.', true, $('#email'));
+  if (email && !/^\S+@\S+\.\S+$/.test(email)) return say('That email address looks incomplete.', true, $('#email'));
 
   const btn = form.querySelector('button[type=submit]');
   btn.disabled = true;
@@ -580,6 +581,7 @@ form.addEventListener('submit', async e => {
         from_name: name || 'Website visitor',
         name,
         email,
+        phone: phone || 'Not provided',
         needs: joinList(n),
         start: w ? w.when : 'Not specified',
         botcheck: $('#botcheck').checked

@@ -228,6 +228,7 @@ ul{padding:0;list-style:none}
 .fill{font:inherit;letter-spacing:inherit;color:var(--accent);border:0;border-bottom:2px solid var(--ink);background:transparent;padding:0 .1em;border-radius:0;
   width:15ch;min-width:0;max-width:100%;field-sizing:content}
 .fill.email{width:20ch}
+.fill.phone{width:16ch}
 .fill::placeholder{color:#c9c9c9}
 .fill:focus{outline:none;border-color:var(--accent);box-shadow:0 2px 0 var(--accent)}
 .chip{font:inherit;letter-spacing:inherit;line-height:1.15;color:var(--ink);background:transparent;border:2px solid var(--ink);border-radius:999px;
