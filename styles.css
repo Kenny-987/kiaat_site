@@ -222,8 +222,9 @@ ul {
 
 .hero h1 {
   text-align: center;
+  /* border: 1px solid red; */
   /* clamp(minimum size, fluid size, maximum size) */
-  font: 300 clamp(2rem, 8vw, min(13.2vw, 17vh)) / 0.92 var(--display);
+  font: 300 clamp(1.5rem, 8vw, min(13.2vw, 17vh)) / 0.92 var(--display);
   letter-spacing: -0.045em;
 
 
